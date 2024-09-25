@@ -262,23 +262,23 @@
       <form class="upload">
         <div class="upload__column">
           <h3 class="upload__heading">Recipe data</h3>
-          <label>Title</label>
-          <input value="TEST" required name="title" type="text" />
-          <label>URL</label>
-          <input value="TEST" required name="sourceUrl" type="text" />
-          <label>Image URL</label>
-          <input value="TEST" required name="image" type="text" />
-          <label>Publisher</label>
-          <input value="TEST" required name="publisher" type="text" />
-          <label>Prep time</label>
+          <label>Title<sup class="upload__asterisk">*</sup></label>
+          <input placeholder="Title of recipe" required name="title" type="text" />
+          <label>URL<sup class="upload__asterisk">*</sup></label>
+          <input placeholder="Enter recipe URL" required name="sourceUrl" type="text" />
+          <label>Image URL<sup class="upload__asterisk">*</sup></label>
+          <input placeholder="Image URL" required name="image" type="text" />
+          <label>Publisher<sup class="upload__asterisk">*</sup></label>
+          <input placeholder="Publisher Name" required name="publisher" type="text" />
+          <label>Prep time<sup class="upload__asterisk">*</sup></label>
           <input value="23" required name="cookingTime" type="number" />
-          <label>Servings</label>
+          <label>Servings<sup class="upload__asterisk">*</sup></label>
           <input value="23" required name="servings" type="number" />
         </div>
 
         <div class="upload__column">
           <h3 class="upload__heading">Ingredients</h3>
-          <label>Ingredient 1</label>
+          <label>Ingredient 1<sup class="upload__asterisk">*</sup></label>
           <input
             value="0.5,kg,Rice"
             type="text"

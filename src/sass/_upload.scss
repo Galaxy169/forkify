@@ -96,4 +96,12 @@
     grid-column: 1 / -1;
     justify-self: center;
   }
+
+  &__asterisk {
+    color: red;
+    /* margin: 5px; */
+    padding: 4px;
+    font-size: 16px;
+  }
+
 }

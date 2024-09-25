@@ -48,12 +48,10 @@ const controllerSearchResults = async function () {
 
     // Get search query
     const query = searchView.getQuery();
-    console.log(query);
     if (!query) return;
 
     // Load search results
     await model.loadSearchResults(query);
-    console.log(model.state.search.results);
 
     // Render Result
     resultView.render(model.getSearchResultsPage());
@@ -103,7 +101,6 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.loadSpinner();
     // Upload Recipe
     await model.uploadRecipe(newRecipe);
-    console.log(model.state.recipe);
 
     // Render Recipe
     recipeView.render(model.state.recipe);

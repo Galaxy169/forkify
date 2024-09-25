@@ -37,8 +37,6 @@ export const loadRecipe = async function (hash) {
     if (state.bookmarks.some(bookmark => bookmark.id === state.recipe.id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
-
-    console.log(state.recipe);
   } catch (error) {
     alert(error);
     recipeView.renderError();
@@ -49,7 +47,6 @@ export const loadRecipe = async function (hash) {
 export const loadSearchResults = async function (query) {
   try {
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
-    console.log(data.data);
 
     state.search.query = query;
 
@@ -63,7 +60,6 @@ export const loadSearchResults = async function (query) {
       };
     });
     state.search.page = 1;
-    console.log(state.search.results);
   } catch (error) {
     alert(error);
     recipeView.renderError();
@@ -128,7 +124,7 @@ export const uploadRecipe = async function (newRecipe) {
     const ingredients = Object.entries(newRecipe)
       .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
       .map(ing => {
-        const ingArr = ing[1].split(',').map(el=> el.trim());
+        const ingArr = ing[1].split(',').map(el => el.trim());
         // const ingArr = ing[1].replaceAll(' ', '').split(',');
         if (ingArr.length !== 3)
           throw new Error(
@@ -151,12 +147,9 @@ export const uploadRecipe = async function (newRecipe) {
     };
 
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
-    console.log(data);
 
     state.recipe = createRecipeObject(data);
     addBookmark(state.recipe);
-
-    console.log(recipe);
   } catch (error) {
     throw error;
   }
